@@ -1,0 +1,15 @@
+__pycache__/
+Data/
+
+
+Data/
+libmdGlobalAddr.so
+libmdAddr.so
+libmdGeo.so
+libmdGlobalParse.so
+libmdRightFielder.so
+*.hash
+
+
+MelissaUpdater
+# libmdGlobalAddrJavaWrapper.so
