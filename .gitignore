@@ -1,13 +1,15 @@
 __pycache__/
 Data/
+Build/
 
-
-Data/
 libmdGlobalAddr.so
 libmdAddr.so
 libmdGeo.so
 libmdGlobalParse.so
 libmdRightFielder.so
+*.class
+*.zip
+*.jar
 *.hash
 
 

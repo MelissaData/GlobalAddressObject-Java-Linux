@@ -8,6 +8,8 @@ Please feel free to copy or embed this code to your own project. Happy coding!
 
 For the latest Melissa Global Address Object release notes, please visit: https://releasenotes.melissa.com/on-premise-api/global-address-object/
 
+For further details, please visit: https://docs.melissa.com/on-premise-api/global-address-object/global-address-object-quickstart.html
+
 The console will ask the user for:
 
 - Address Line 1
@@ -43,7 +45,7 @@ And return
 
 - Linux 64-bit Java 19
 - Ubuntu 20.04.05 LTS
-- Melissa data files for 2023-Q3
+- Melissa data files for 2023-Q4
 
 ## Required File(s) and Programs
 
@@ -193,7 +195,7 @@ Melissa Updater is a CLI application allowing the user to update their Melissa a
 #### Different ways to get data file(s)
 1.  Using Melissa Updater
 	- It will handle all of the data download/path and .so file(s) for you. 
-2.  If you already have the latest DQS Release (ZIP), you can find the data file(s) and .so file(s) in there
+2.  If you already have the latest Release (ZIP), you can find the data file(s) and .so file(s) in there
 	- Use the location of where you copied/installed the data and update the "DataPath" variable in the bash script.
 	- Copy all the .so file(s) mentioned above into the `MelissaGlobalAddressObjectLinuxJava` project folder.
 	

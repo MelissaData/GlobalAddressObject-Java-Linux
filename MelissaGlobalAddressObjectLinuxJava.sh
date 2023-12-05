@@ -109,7 +109,7 @@ done
 
 ######################### Config ###########################
 
-RELEASE_VERSION='2023.Q3'
+RELEASE_VERSION='2023.Q4'
 
 # Uses the location of the .sh file 
 # Modify this if you want to use 
@@ -370,12 +370,12 @@ fi
 
 # Use Melissa Updater to download data file(s) 
 # Download data file(s) 
-# DownloadDataFiles $license      # comment out this line if using DQS Release
+# DownloadDataFiles $license      # comment out this line if using Release
 
 # # Set data file(s) path
-# #DataPath=""      # uncomment this line and change to your DQS Release data file(s) directory 
+# #DataPath=""      # uncomment this line and change to your Release data file(s) directory 
 
-# #if [ ! -d $DataPath ]; # uncomment this section of code if you are using your own DQS Release data file(s) directory
+# #if [ ! -d $DataPath ]; # uncomment this section of code if you are using your own Release data file(s) directory
 # #then
 #     #printf "\nData path is invalid!\n"
 #     #exit 1
