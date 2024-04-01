@@ -17,6 +17,7 @@ locality=""
 administrativeArea=""
 postalCode=""
 country=""
+dataPath=""
 license=""
 quiet="false"
 
@@ -25,7 +26,7 @@ while [ $# -gt 0 ] ; do
     --addressLine1) 
         addressLine1="$2"
 
-        if [ "$addressLine1" == "--addressLine2" ] || [ "$addressLine1" == "--addressLine3" ] || [ "$addressLine1" == "--locality" ] || [ "$addressLine1" == "--administrativeArea" ] || [ "$addressLine1" == "--postalCode" ] || [ "$addressLine1" == "--country" ] || [ "$addressLine1" == "--license" ] || [ "$addressLine1" == "--quiet" ] || [ -z "$addressLine1" ];
+        if [ "$addressLine1" == "--addressLine2" ] || [ "$addressLine1" == "--addressLine3" ] || [ "$addressLine1" == "--locality" ] || [ "$addressLine1" == "--administrativeArea" ] || [ "$addressLine1" == "--postalCode" ] || [ "$addressLine1" == "--country" ] || [ "$addressLine1" == "--dataPath" ] || [ "$addressLine1" == "--license" ] || [ "$addressLine1" == "--quiet" ] || [ -z "$addressLine1" ];
         then
             printf "${RED}Error: Missing an argument for parameter \'addressLine1\'.${NC}\n"  
             exit 1
@@ -34,7 +35,7 @@ while [ $# -gt 0 ] ; do
     --addressLine2) 
         addressLine2="$2"
 
-        if [ "$addressLine2" == "--addressLine1" ] || [ "$addressLine2" == "--addressLine3" ] || [ "$addressLine2" == "--locality" ] || [ "$addressLine2" == "--administrativeArea" ] || [ "$addressLine2" == "--postalCode" ] || [ "$addressLine2" == "--country" ] || [ "$addressLine2" == "--license" ] || [ "$addressLine2" == "--quiet" ] || [ -z "$addressLine2" ];
+        if [ "$addressLine2" == "--addressLine1" ] || [ "$addressLine2" == "--addressLine3" ] || [ "$addressLine2" == "--locality" ] || [ "$addressLine2" == "--administrativeArea" ] || [ "$addressLine2" == "--postalCode" ] || [ "$addressLine2" == "--country" ] || [ "$addressLine2" == "--dataPath" ] || [ "$addressLine2" == "--license" ] || [ "$addressLine2" == "--quiet" ] || [ -z "$addressLine2" ];
         then
             printf "${RED}Error: Missing an argument for parameter \'addressLine2\'.${NC}\n"  
             exit 1
@@ -43,7 +44,7 @@ while [ $# -gt 0 ] ; do
     --addressLine3) 
         addressLine3="$2"
 
-        if [ "$addressLine3" == "--addressLine1" ] || [ "$addressLine3" == "--addressLine2" ] || [ "$addressLine3" == "--locality" ] || [ "$addressLine3" == "--administrativeArea" ] || [ "$addressLine3" == "--postalCode" ] || [ "$addressLine3" == "--country" ] || [ "$addressLine3" == "--license" ] || [ "$addressLine3" == "--quiet" ] || [ -z "$addressLine3" ];
+        if [ "$addressLine3" == "--addressLine1" ] || [ "$addressLine3" == "--addressLine2" ] || [ "$addressLine3" == "--locality" ] || [ "$addressLine3" == "--administrativeArea" ] || [ "$addressLine3" == "--postalCode" ] || [ "$addressLine3" == "--country" ] || [ "$addressLine3" == "--dataPath" ] || [ "$addressLine3" == "--license" ] || [ "$addressLine3" == "--quiet" ] || [ -z "$addressLine3" ];
         then
             printf "${RED}Error: Missing an argument for parameter \'addressLine3\'.${NC}\n"  
             exit 1
@@ -52,7 +53,7 @@ while [ $# -gt 0 ] ; do
     --locality) 
         locality="$2"
 
-        if [ "$locality" == "--addressLine1" ] || [ "$locality" == "--addressLine2" ] || [ "$locality" == "--addressLine3" ] || [ "$locality" == "--administrativeArea" ] || [ "$locality" == "--postalCode" ] || [ "$locality" == "--country" ] || [ "$locality" == "--license" ] || [ "$locality" == "--quiet" ] || [ -z "$locality" ];
+        if [ "$locality" == "--addressLine1" ] || [ "$locality" == "--addressLine2" ] || [ "$locality" == "--addressLine3" ] || [ "$locality" == "--administrativeArea" ] || [ "$locality" == "--postalCode" ] || [ "$locality" == "--country" ] || [ "$locality" == "--dataPath" ] || [ "$locality" == "--license" ] || [ "$locality" == "--quiet" ] || [ -z "$locality" ];
         then
             printf "${RED}Error: Missing an argument for parameter \'locality\'.${NC}\n"  
             exit 1
@@ -61,7 +62,7 @@ while [ $# -gt 0 ] ; do
     --administrativeArea) 
         administrativeArea="$2"
 
-        if [ "$administrativeArea" == "--addressLine1" ] || [ "$administrativeArea" == "--addressLine2" ] || [ "$administrativeArea" == "--addressLine3" ] || [ "$administrativeArea" == "--locality" ] || [ "$administrativeArea" == "--postalCode" ] || [ "$administrativeArea" == "--country" ] || [ "$administrativeArea" == "--license" ] || [ "$administrativeArea" == "--quiet" ] || [ -z "$administrativeArea" ];
+        if [ "$administrativeArea" == "--addressLine1" ] || [ "$administrativeArea" == "--addressLine2" ] || [ "$administrativeArea" == "--addressLine3" ] || [ "$administrativeArea" == "--locality" ] || [ "$administrativeArea" == "--postalCode" ] || [ "$administrativeArea" == "--country" ] || [ "$administrativeArea" == "--dataPath" ] || [ "$administrativeArea" == "--license" ] || [ "$administrativeArea" == "--quiet" ] || [ -z "$administrativeArea" ];
         then
             printf "${RED}Error: Missing an argument for parameter \'administrativeArea\'.${NC}\n"  
             exit 1
@@ -70,7 +71,7 @@ while [ $# -gt 0 ] ; do
     --postalCode) 
         postalCode="$2"
 
-        if [ "$postalCode" == "--addressLine1" ] || [ "$postalCode" == "--addressLine2" ] || [ "$postalCode" == "--addressLine3" ] || [ "$postalCode" == "--locality" ] || [ "$postalCode" == "--administrativeArea" ] || [ "$postalCode" == "--country" ] || [ "$postalCode" == "--license" ] || [ "$postalCode" == "--quiet" ] || [ -z "$postalCode" ];
+        if [ "$postalCode" == "--addressLine1" ] || [ "$postalCode" == "--addressLine2" ] || [ "$postalCode" == "--addressLine3" ] || [ "$postalCode" == "--locality" ] || [ "$postalCode" == "--administrativeArea" ] || [ "$postalCode" == "--country" ] || [ "$postalCode" == "--dataPath" ] || [ "$postalCode" == "--license" ] || [ "$postalCode" == "--quiet" ] || [ -z "$postalCode" ];
         then
             printf "${RED}Error: Missing an argument for parameter \'zip\'.${NC}\n"  
             exit 1
@@ -79,16 +80,25 @@ while [ $# -gt 0 ] ; do
     --country) 
         country="$2"
 
-        if [ "$country" == "--addressLine1" ] || [ "$country" == "--addressLine2" ] || [ "$country" == "--addressLine3" ] || [ "$country" == "--locality" ] || [ "$country" == "--administrativeArea" ] || [ "$country" == "--postalCode" ] || [ "$country" == "--license" ] || [ "$country" == "--quiet" ] || [ -z "$country" ];
+        if [ "$country" == "--addressLine1" ] || [ "$country" == "--addressLine2" ] || [ "$country" == "--addressLine3" ] || [ "$country" == "--locality" ] || [ "$country" == "--administrativeArea" ] || [ "$country" == "--postalCode" ] || [ "$country" == "--dataPath" ] || [ "$country" == "--license" ] || [ "$country" == "--quiet" ] || [ -z "$country" ];
         then
             printf "${RED}Error: Missing an argument for parameter \'country\'.${NC}\n"  
             exit 1
         fi   
         ;;		
+    --dataPath) 
+        dataPath="$2"
+
+        if [ "$dataPath" == "--addressLine1" ] || [ "$dataPath" == "--addressLine2" ] || [ "$dataPath" == "--addressLine3" ] || [ "$dataPath" == "--locality" ] || [ "$dataPath" == "--administrativeArea" ] || [ "$dataPath" == "--postalCode" ] || [ "$dataPath" == "--license" ] || [ "$dataPath" == "--quiet" ] || [ -z "$dataPath" ];
+        then
+            printf "${RED}Error: Missing an argument for parameter \'dataPath\'.${NC}\n"  
+            exit 1
+        fi   
+        ;;
     --license) 
         license="$2"
 
-        if [ "$license" == "--addressLine1" ] || [ "$license" == "--addressLine2" ] || [ "$license" == "--addressLine3" ] || [ "$license" == "--locality" ] || [ "$license" == "--administrativeArea" ] || [ "$license" == "--postalCode" ] || [ "$license" == "--country" ] || [ "$license" == "--quiet" ] || [ -z "$license" ];
+        if [ "$license" == "--addressLine1" ] || [ "$license" == "--addressLine2" ] || [ "$license" == "--addressLine3" ] || [ "$license" == "--locality" ] || [ "$license" == "--administrativeArea" ] || [ "$license" == "--postalCode" ] || [ "$license" == "--country" ] || [ "$license" == "--dataPath" ] || [ "$license" == "--quiet" ] || [ -z "$license" ];
         then
             printf "${RED}Error: Missing an argument for parameter \'license\'.${NC}\n"  
             exit 1
@@ -97,7 +107,7 @@ while [ $# -gt 0 ] ; do
     --quiet) 
         quiet="true" 
         
-        if [ "$quiet" == "--addressLine1" ] || [ "$quiet" == "--addressLine2" ] || [ "$quiet" == "--addressLine3" ] || [ "$quiet" == "--locality" ] || [ "$quiet" == "--administrativeArea" ] || [ "$quiet" == "--postalCode" ] || [ "$quiet" == "--country" ] || [ "$quiet" == "--quiet" ] || [ -z "$quiet" ];
+        if [ "$quiet" == "--addressLine1" ] || [ "$quiet" == "--addressLine2" ] || [ "$quiet" == "--addressLine3" ] || [ "$quiet" == "--locality" ] || [ "$quiet" == "--administrativeArea" ] || [ "$quiet" == "--postalCode" ] || [ "$quiet" == "--country" ] || [ "$quiet" == "--dataPath" ] || [ "$quiet" == "--quiet" ] || [ -z "$quiet" ];
         then
             printf "${RED}Error: problem setting \'quiet\'.${NC}\n"  
             exit 1
@@ -109,23 +119,28 @@ done
 
 ######################### Config ###########################
 
-RELEASE_VERSION='2023.Q4'
+RELEASE_VERSION='2024.Q1'
+ProductName="GLOBAL_DQ_DATA"
 
 # Uses the location of the .sh file 
-# Modify this if you want to use 
 CurrentPath=$(pwd)
 ProjectPath="$CurrentPath/MelissaGlobalAddressObjectLinuxJava"
-BuildPath="$ProjectPath"
-DataPath="$ProjectPath/Data"
 
-if [ ! -d $DataPath ];
+if [ -z "$dataPath" ];
 then
-    mkdir $DataPath
+    DataPath="$ProjectPath/Data"
+else
+    DataPath=$dataPath
 fi
 
-if [ ! -d $BuildPath ];
+if [ ! -d "$DataPath" ] && [ "$DataPath" == "$ProjectPath/Data" ];
 then
-    mkdir $BuildPath
+    mkdir "$DataPath"
+elif [ ! -d "$DataPath" ] && [ "$DataPath" != "$ProjectPath/Data" ];
+then
+    printf "\nData file path does not exist. Please check that your file path is correct.\n"
+    printf "\nAborting program, see above.\n"
+    exit 1
 fi
 
 # Config variables for download file(s)
@@ -172,30 +187,23 @@ Com_Compiler="ANY"
 Com_Architecture="ANY"
 Com_Type="DATA"
 
-
-Manifest_FileName="global_dq_data"
-Manifest_ReleaseVersion=$RELEASE_VERSION
-
-
 # ######################## Functions #########################
 
 DownloadDataFiles()
 {
-    printf "========================== MELISSA UPDATER =========================\n"
+    printf "============================== MELISSA UPDATER ============================\n"
     printf "MELISSA UPDATER IS DOWNLOADING DATA FILE(S)...\n"
 
-
-    ./MelissaUpdater/MelissaUpdater manifest -p $Manifest_FileName -r $Manifest_ReleaseVersion -l $1 -t "$DataPath" 
-
+    ./MelissaUpdater/MelissaUpdater manifest -p $ProductName -r $RELEASE_VERSION -l $1 -t $DataPath 
     if [ $? -ne 0 ];
     then
         printf "\nCannot run Melissa Updater. Please check your license string!\n"
         exit 1
     fi     
-    
 
     printf "Melissa Updater finished downloading data file(s)!\n"
 }
+
 
 DownloadSO() 
 {
@@ -204,56 +212,56 @@ DownloadSO()
     # Check for quiet mode
     if [ $quiet == "true" ];
     then
-        ./MelissaUpdater/MelissaUpdater file --filename $Config1_FileName --release_version $Config1_ReleaseVersion --license $1 --os $Config1_OS --compiler $Config1_Compiler --architecture $Config1_Architecture --type $Config1_Type --target_directory $BuildPath &> /dev/null
+        ./MelissaUpdater/MelissaUpdater file --filename $Config1_FileName --release_version $Config1_ReleaseVersion --license $1 --os $Config1_OS --compiler $Config1_Compiler --architecture $Config1_Architecture --type $Config1_Type --target_directory $ProjectPath &> /dev/null
         if [ $? -ne 0 ];
         then
             printf "\nCannot run Melissa Updater. Please check your license string!\n"
             exit 1
         fi
 
-        ./MelissaUpdater/MelissaUpdater file --filename $Config2_FileName --release_version $Config2_ReleaseVersion --license $1 --os $Config2_OS --compiler $Config2_Compiler --architecture $Config2_Architecture --type $Config2_Type --target_directory $BuildPath &> /dev/null
+        ./MelissaUpdater/MelissaUpdater file --filename $Config2_FileName --release_version $Config2_ReleaseVersion --license $1 --os $Config2_OS --compiler $Config2_Compiler --architecture $Config2_Architecture --type $Config2_Type --target_directory $ProjectPath &> /dev/null
         if [ $? -ne 0 ];
         then
             printf "\nCannot run Melissa Updater. Please check your license string!\n"
             exit 1
         fi
 
-        ./MelissaUpdater/MelissaUpdater file --filename $Config3_FileName --release_version $Config3_ReleaseVersion --license $1 --os $Config3_OS --compiler $Config3_Compiler --architecture $Config3_Architecture --type $Config3_Type --target_directory $BuildPath &> /dev/null
+        ./MelissaUpdater/MelissaUpdater file --filename $Config3_FileName --release_version $Config3_ReleaseVersion --license $1 --os $Config3_OS --compiler $Config3_Compiler --architecture $Config3_Architecture --type $Config3_Type --target_directory $ProjectPath &> /dev/null
         if [ $? -ne 0 ];
         then
             printf "\nCannot run Melissa Updater. Please check your license string!\n"
             exit 1
         fi
         
-        ./MelissaUpdater/MelissaUpdater file --filename $Config4_FileName --release_version $Config4_ReleaseVersion --license $1 --os $Config4_OS --compiler $Config4_Compiler --architecture $Config4_Architecture --type $Config4_Type --target_directory $BuildPath &> /dev/null
+        ./MelissaUpdater/MelissaUpdater file --filename $Config4_FileName --release_version $Config4_ReleaseVersion --license $1 --os $Config4_OS --compiler $Config4_Compiler --architecture $Config4_Architecture --type $Config4_Type --target_directory $ProjectPath &> /dev/null
         if [ $? -ne 0 ];
         then
             printf "\nCannot run Melissa Updater. Please check your license string!\n"
             exit 1
         fi
     else
-        ./MelissaUpdater/MelissaUpdater file --filename $Config1_FileName --release_version $Config1_ReleaseVersion --license $1 --os $Config1_OS --compiler $Config1_Compiler --architecture $Config1_Architecture --type $Config1_Type --target_directory $BuildPath 
+        ./MelissaUpdater/MelissaUpdater file --filename $Config1_FileName --release_version $Config1_ReleaseVersion --license $1 --os $Config1_OS --compiler $Config1_Compiler --architecture $Config1_Architecture --type $Config1_Type --target_directory $ProjectPath 
         if [ $? -ne 0 ];
         then
             printf "\nCannot run Melissa Updater. Please check your license string!\n"
             exit 1
         fi
    
-        ./MelissaUpdater/MelissaUpdater file --filename $Config2_FileName --release_version $Config2_ReleaseVersion --license $1 --os $Config2_OS --compiler $Config2_Compiler --architecture $Config2_Architecture --type $Config2_Type --target_directory $BuildPath 
+        ./MelissaUpdater/MelissaUpdater file --filename $Config2_FileName --release_version $Config2_ReleaseVersion --license $1 --os $Config2_OS --compiler $Config2_Compiler --architecture $Config2_Architecture --type $Config2_Type --target_directory $ProjectPath 
         if [ $? -ne 0 ];
         then
             printf "\nCannot run Melissa Updater. Please check your license string!\n"
             exit 1
         fi
 
-        ./MelissaUpdater/MelissaUpdater file --filename $Config3_FileName --release_version $Config3_ReleaseVersion --license $1 --os $Config3_OS --compiler $Config3_Compiler --architecture $Config3_Architecture --type $Config3_Type --target_directory $BuildPath 
+        ./MelissaUpdater/MelissaUpdater file --filename $Config3_FileName --release_version $Config3_ReleaseVersion --license $1 --os $Config3_OS --compiler $Config3_Compiler --architecture $Config3_Architecture --type $Config3_Type --target_directory $ProjectPath 
         if [ $? -ne 0 ];
         then
             printf "\nCannot run Melissa Updater. Please check your license string!\n"
             exit 1
         fi
 
-        ./MelissaUpdater/MelissaUpdater file --filename $Config4_FileName --release_version $Config4_ReleaseVersion --license $1 --os $Config4_OS --compiler $Config4_Compiler --architecture $Config4_Architecture --type $Config4_Type --target_directory $BuildPath 
+        ./MelissaUpdater/MelissaUpdater file --filename $Config4_FileName --release_version $Config4_ReleaseVersion --license $1 --os $Config4_OS --compiler $Config4_Compiler --architecture $Config4_Architecture --type $Config4_Type --target_directory $ProjectPath 
         if [ $? -ne 0 ];
         then
             printf "\nCannot run Melissa Updater. Please check your license string!\n"
@@ -265,7 +273,7 @@ DownloadSO()
 }
 
 DownloadWrappers() 
-{    
+{   
     # Check for quiet mode
     if [ $quiet == "true" ];
     then
@@ -328,16 +336,16 @@ DownloadWrappers()
 
 CheckSOs() 
 {
-    if [ ! -f $BuildPath/$Config1_FileName ];
+    if [ ! -f $ProjectPath/$Config1_FileName ];
     then
         echo "false"
-    elif [ ! -f $BuildPath/$Config2_FileName ];
+    elif [ ! -f $ProjectPath/$Config2_FileName ];
     then    
         echo "false"
-    elif [ ! -f $BuildPath/$Config3_FileName ];
+    elif [ ! -f $ProjectPath/$Config3_FileName ];
     then
         echo "false"
-    elif [ ! -f $BuildPath/$Config4_FileName ];
+    elif [ ! -f $ProjectPath/$Config4_FileName ];
     then
         echo "false"
     else
@@ -347,7 +355,7 @@ CheckSOs()
 
 ########################## Main ############################
 
-printf "\n====================== Melissa Global Address Object ======================\n                       [ Java | Linux | 64BIT ]\n"
+printf "\n====================== Melissa Global Address Object ======================\n                         [ Java | Linux | 64BIT ]\n"
 
 # Get license (either from parameters or user input)
 if [ -z "$license" ];
@@ -368,18 +376,25 @@ then
   exit 1
 fi
 
+# Get data file path (either from parameters or user input)
+if [ "$DataPath" = "$ProjectPath/Data" ]; then
+    printf "Please enter your data files path directory if you have already downloaded the release zip.\nOtherwise, the data files will be downloaded using the Melissa Updater (Enter to skip): "
+    read dataPathInput
+
+    if [ ! -z "$dataPathInput" ]; then  
+        if [ ! -d "$dataPathInput" ]; then  
+            printf "\nData file path does not exist. Please check that your file path is correct.\n"
+            printf "\nAborting program, see above.\n"
+            exit 1
+        else
+            DataPath=$dataPathInput
+        fi
+    fi
+fi
+
 # Use Melissa Updater to download data file(s) 
 # Download data file(s) 
-# DownloadDataFiles $license      # comment out this line if using Release
-
-# # Set data file(s) path
-# #DataPath=""      # uncomment this line and change to your Release data file(s) directory 
-
-# #if [ ! -d $DataPath ]; # uncomment this section of code if you are using your own Release data file(s) directory
-# #then
-#     #printf "\nData path is invalid!\n"
-#     #exit 1
-# #fi
+DownloadDataFiles $license # Comment out this line if using own release
 
 # # Download SO(s)
 DownloadSO $license 
@@ -405,18 +420,16 @@ printf "\nAll file(s) have been downloaded/updated!\n"
 
 # Start 
 # Build project
-
 cd $ProjectPath
-printf "\n=========================== BUILD PROJECT ==========================\n"
+printf "\n=============================== BUILD PROJECT =============================\n"
 javac -cp .:com/melissadata/*.java MelissaGlobalAddressObjectLinuxJava.java
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/.
 jar cvfm MelissaGlobalAddressObjectLinuxJava.jar manifest.txt com/melissadata/*.class *.class *.so
 
-
 # Run Project
 if [ -z "$addressLine1" ];
 then
-    java -jar MelissaGlobalAddressObjectLinuxJava.jar --license "$license"  --dataPath "$DataPath"
+    java -jar "$ProjectPath/MelissaGlobalAddressObjectLinuxJava.jar" --license "$license"  --dataPath "$DataPath"
 else
-    java -jar MelissaGlobalAddressObjectLinuxJava.jar --license "$license"  --dataPath "$DataPath" --addressLine1 "$addressLine1" --addressLine2 "$addressLine2" --addressLine3 "$addressLine3" --locality "$locality" --administrativeArea "$administrativeArea" --postalCode "$postalCode" --country "$country"
+    java -jar "$ProjectPath/MelissaGlobalAddressObjectLinuxJava.jar" --license "$license"  --dataPath "$DataPath" --addressLine1 "$addressLine1" --addressLine2 "$addressLine2" --addressLine3 "$addressLine3" --locality "$locality" --administrativeArea "$administrativeArea" --postalCode "$postalCode" --country "$country"
 fi

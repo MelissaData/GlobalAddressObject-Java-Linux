@@ -43,9 +43,8 @@ And return
 
 ## Tested Environments
 
-- Linux 64-bit Java 19
-- Ubuntu 20.04.05 LTS
-- Melissa data files for 2023-Q4
+- Linux 64-bit Java 19, Ubuntu 20.04.05 LTS
+- Melissa data files for 2024-Q1
 
 ## Required File(s) and Programs
 
@@ -57,8 +56,6 @@ This is the c++ code of the Melissa Object.
 - libmdGeo.so
 - libmdGlobalAddr.so
 - libmdRightFielder.so
-
-
 
 #### Data File(s)
 - Addr.dbf
@@ -194,12 +191,13 @@ Melissa Updater is a CLI application allowing the user to update their Melissa a
 
 #### Different ways to get data file(s)
 1.  Using Melissa Updater
-	- It will handle all of the data download/path and .so file(s) for you. 
-2.  If you already have the latest Release (ZIP), you can find the data file(s) and .so file(s) in there
-	- Use the location of where you copied/installed the data and update the "DataPath" variable in the bash script.
-	- Copy all the .so file(s) mentioned above into the `MelissaGlobalAddressObjectLinuxJava` project folder.
+    - It will handle all of the data download/path and .so file(s) for you. 
+    - **Please be aware that this object will require about 100GB of disk space.**
+2.  If you already have the latest release zip, you can find the data file(s) in there
+    - To pass in your own data file path directory, you may either use the '--dataPath' parameter or enter the data file path directly in interactive mode.
+    - Comment out this line "DownloadDataFiles $license" in the bash script.
+    - This will prevent you from having to redownload all the files.
 	
-----------------------------------------
 ### Change Bash Script Permissions
 To be able to run the bash script, you must first make it an executable using the command:
 
@@ -212,25 +210,20 @@ Then you need to add permissions to the build directory with the command:
 As an indicator, the filename will change colors once it becomes an executable.
 
 ## Run Bash Script
-Please consult the release notes and wiki for the best way to input the parameters.
-
-Release Notes: https://releasenotes.melissa.com/on-premise-api/global-address-object/
-
-Wiki: https://wiki.melissadata.com/index.php?title=Result_Code_Details#Global_Address_Object
-
 Parameters:
-- -addressLine1: a test address line 1
-- -addressLine2 (optional): a test address line 2
-- -addressLine3 (optional): a test address line 3
-- -locality: a test locality
-- -administrativeArea: a test administrative area
-- -postalCode: a test postal code
-- -country: a test country
+- --addressLine1: a test address line 1
+- --addressLine2 (optional): a test address line 2
+- --addressLine3 (optional): a test address line 3
+- --locality: a test locality
+- --administrativeArea: a test administrative area
+- --postalCode: a test postal code
+- --country: a test country
  	
   These are convenient when you want to get results for a specific address in one run instead of testing multiple addresses in interactive mode.
 
-- -license (optional): a license string to test the Global Address Object
-- -quiet (optional): add to the command if you do not want to get any console output from the Melissa Updater
+- --dataPath (optional): a data file path directory to test the Global Address Object
+- --license (optional): a license string to test the Global Address Object
+- --quiet (optional): add to the command if you do not want to get any console output from the Melissa Updater
 
 When you have modified the script to match your data location, let's run the script. There are two modes:
 - Interactive 
@@ -245,7 +238,7 @@ When you have modified the script to match your data location, let's run the scr
     ```
 - Command Line 
 
-	You can pass an address line 1, address line 2, address line 3, locality, administrative area, postal code, country, and a license string into the ```-addressLine1```, ```-addressLine2```, ```-addressLine3```, ```-locality```, ```-administrativeArea```, ```-postalCode```, ```-country```, and ```-license``` parameters respectively to test Global Address Object. For example:
+	You can pass an address line 1, address line 2, address line 3, locality, administrative area, postal code, country, and a license string into the ```--addressLine1```, ```--addressLine2```, ```--addressLine3```, ```--locality```, ```--administrativeArea```, ```--postalCode```, ```--country```, and ```--license``` parameters respectively to test Global Address Object. For example:
 
     ```
     $ ./MelissaGlobalAddressObjectLinuxJava.sh --addressLine1 "Melissa Data GmbH" --addressLine2 "Cäcilienstr. 42-44" --addressLine3 "50667 Köln" --country "Germany"
