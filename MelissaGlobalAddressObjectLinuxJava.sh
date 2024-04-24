@@ -105,13 +105,7 @@ while [ $# -gt 0 ] ; do
         fi    
         ;;
     --quiet) 
-        quiet="true" 
-        
-        if [ "$quiet" == "--addressLine1" ] || [ "$quiet" == "--addressLine2" ] || [ "$quiet" == "--addressLine3" ] || [ "$quiet" == "--locality" ] || [ "$quiet" == "--administrativeArea" ] || [ "$quiet" == "--postalCode" ] || [ "$quiet" == "--country" ] || [ "$quiet" == "--dataPath" ] || [ "$quiet" == "--quiet" ] || [ -z "$quiet" ];
-        then
-            printf "${RED}Error: problem setting \'quiet\'.${NC}\n"  
-            exit 1
-        fi    
+        quiet="true"   
         ;;
   esac
   shift
@@ -183,9 +177,9 @@ Wrapper_Type="INTERFACE"
 Com_FileName="mdGlobalAddr_JavaCode.zip"
 Com_ReleaseVersion=$RELEASE_VERSION
 Com_OS="ANY"
-Com_Compiler="ANY"
+Com_Compiler="JAVA"
 Com_Architecture="ANY"
-Com_Type="DATA"
+Com_Type="INTERFACE"
 
 # ######################## Functions #########################
 
